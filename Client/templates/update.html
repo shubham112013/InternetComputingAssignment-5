@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update or Delete</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+ <div class="header">
+    <div class="header1">
+        <h1>Update or Delete Agent records</h1>
+    </div>
+    
+  </div>
+    <form action='/update' method='POST'>
+        <table class="table">
+            {% for data in result %}
+            <tr><td>ID</td><td><input type='text' name='id' value={{data['id']}}></td></tr>
+            <tr><td>Agent Name</td><td><input type='text' name='agentname' value={{data['agentname']}}></td></tr>
+            <tr><td>On-Trip</td><td><input type='text' name='ontrip' value={{data['ontrip']}}></td></tr>
+            <tr><td>Order-id</td><td><input type='text' name='order-id' value={{data['order-id']}}></td></tr>
+            <tr><td>Pick-From</td><td><input type='text' name='pick' value={{data['pick']}}></td></tr>
+            <tr><td>Drop-Destination</td><td><input type='text' name='drop' value={{data['drop']}}></td></tr>
+            <tr><td><input class="btn btn-default" type='submit' value='Update'></td><td><a href="/delete/{{data['id']}}"><input class="btn btn-default" type="button" value="Delete"></a></td></tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+</html>

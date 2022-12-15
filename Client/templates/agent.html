@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="header">
+    <div class = "header1">
+    <h1>Item List</h1>
+</div>
+  </div>
+    <table class="table table-hover">
+        <thead>
+      <tr>
+        <th>ID</th>
+        <th>Agent Name</th>
+        <th>On-Trip</th>
+        <th>Order-id</th>
+        <th>Pick-From</th>
+        <th>Drop-Destination</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+         {% for data in result %}
+
+            <tr>
+                <td> {{ data['id'] }} </td>
+                <td> {{ data['agentname'] }} </td>
+                <td> {{ data['ontrip'] }} </td>
+                <td> {{ data['order-id'] }} </td>
+                 <td> {{ data['pick'] }} </td>
+                 <td> {{ data['drop'] }} </td>
+                <td>
+                    <a href="/agent/{{ data['id'] }}" ><button class="btn btn-default"> Click Here</button></a>
+                </td>
+            </tr>
+
+         {% endfor %}
+    </tbody>
+      </table>
+      <div class="button">
+      <a href="/add" class="btn btn-lg btn-primary" role="button">Add Agent</a>
+      </div>
+
+</body>
+</html>

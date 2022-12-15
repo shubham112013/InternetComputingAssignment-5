@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Agent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="header">
+    <div class="header1">
+        <h1>Add Agent</h1>
+    </div> 
+  </div>
+<form method="POST" action="/add">
+<table class="table table-bordered">
+    <tr><td>ID</td><td><input type="text" name="id"></td></tr>
+    <tr><td>Agent Name</td><td><input type="text" name="agentname"></td></tr>
+    <tr><td>On-Trip</td><td><input type="text" name="ontrip"></td></tr>
+    <tr><td>Order-id</td><td><input type="text" name="order-id"></td></tr>
+    <tr><td>Pick-From</td><td><input type="text" name="pick"></td></tr>
+    <tr><td>Drop-Destinaton</td><td><input type="text" name="drop"></td></tr>
+    <tr><td colspan="2"><input class="btn btn-default" type="submit" value="Submit"></td></tr>
+</table>
+</form>
+</body>
+</html>

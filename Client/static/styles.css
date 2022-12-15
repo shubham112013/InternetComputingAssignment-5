@@ -1,0 +1,25 @@
+.header{
+background-color : #4B56D2;
+margin: auto -16px;
+padding: 16px 32px;
+box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+}
+
+
+.header1{
+color: #fff;
+font-family: "McLaren", inherit;
+font-weight: 800;
+text-align: center;
+height: 40px;
+}
+
+
+.button{
+text-align: center;
+}
+
+
+body{
+background-color: #B9E0FF;
+}
